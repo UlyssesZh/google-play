@@ -193,7 +193,7 @@ func (f *flags) do_details() (*play.Details, error) {
 }
 
 func (f *flags) write_file(name string, data []byte) error {
-   log.Println(name)
+   log.Println("WriteFile", name)
    return os.WriteFile(name, data, os.ModePerm)
 }
 
