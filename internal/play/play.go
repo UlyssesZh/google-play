@@ -98,12 +98,14 @@ func (transport) RoundTrip(req *http.Request) (*http.Response, error) {
 type transport struct{}
 
 func (f *flags) New() error {
-   var err error
-   f.home, err = os.UserHomeDir()
-   if err != nil {
-      return err
+   f.home = os.Getenv("GOOGLE_PLAY_HOME")
+   if f.home == "" {
+      userHome, err := os.UserHomeDir()
+      if err != nil {
+         return err
+      }
+      f.home = filepath.Join(userHome, ".config/google-play")
    }
-   f.home = filepath.ToSlash(f.home) + "/google/play"
    return nil
 }
 

@@ -1,3 +1,17 @@
+> [!NOTE]
+> The original author of this tool is @3052.
+> The original repository is deleted in 2025
+> (so all the issues and pull requests are lost).
+> I will try to keep this tool alive by maintaining it here in this repository.
+>
+> In its current stage, work needs to be done to support Android 13,
+> which is difficult to bypass due to the IMEI checking.
+> Help is welcome.
+
+The contents after this horizontal line are the original `readme.md` file.
+
+---
+
 # Google Play
 
 > I’m not really sure what the point of this video is, but I guess just be

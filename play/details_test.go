@@ -9,11 +9,14 @@ import (
 )
 
 func TestDetails(t *testing.T) {
-   home, err := os.UserHomeDir()
-   if err != nil {
-      t.Fatal(err)
+   home = os.Getenv("GOOGLE_PLAY_HOME")
+   if home == "" {
+      home, err := os.UserHomeDir()
+      if err != nil {
+         t.Fatal(err)
+      }
+      home = filepath.Join(home, ".config/google-play")
    }
-   home = filepath.ToSlash(home) + "/google/play"
    data, err := os.ReadFile(home + "/Token")
    if err != nil {
       t.Fatal(err)
