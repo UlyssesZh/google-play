@@ -1,0 +1,587 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="vcs" content="git"/>
+<meta name="vcs:default-branch" content="main"/>
+<meta name="vcs:clone" content="https://github.com/UlyssesZh/google-play.git"/>
+<meta name="vcs:clone" content="git@github.com:UlyssesZh/google-play.git"/>
+<meta name="forge:summary" content="https://github.com/UlyssesZh/google-play"/>
+<meta name="forge:dir" content="https://github.com/UlyssesZh/google-play/blob/{ref}/{path}"/>
+<meta name="forge:file" content="https://github.com/UlyssesZh/google-play/blob/{ref}/{path}"/>
+<meta name="forge:rawfile" content="https://github.com/UlyssesZh/google-play/raw/{ref}/{path}"/>
+<meta name="forge:line" content="https://github.com/UlyssesZh/google-play/blob/{ref}/{path}#L{line}"/>
+<meta name="go-import" content="github.com/UlyssesZh/google-play git https://github.com/UlyssesZh/google-play.git"/>
+<meta name="go-source" content="github.com/UlyssesZh/google-play https://github.com/UlyssesZh/google-play https://github.com/UlyssesZh/google-play/blob/{commit}/{file} https://github.com/UlyssesZh/google-play/blob/{commit}/{file}#L{line}"/>
+<link href="/doc/google-play/vanitydoc.css" rel="stylesheet">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+        <title>manifest package - github.com/UlyssesZh/google-play</title>
+    </head>
+    <body>
+        <div class="module-nav sticky-header">
+          <div>
+            <a href="/doc/google-play/">github.com/UlyssesZh/google-play</a>/<a href="#top" title="Back to top"
+              >blog/2025-04/android-13 <span>↑</span></a
+            >
+          </div>
+          <nav><a
+                href="#pkg-index"
+                >Index</a
+              >
+            <span>|</span>&nbsp;<a
+                href="#pkg-files"
+                >Files</a
+              >
+            </nav>
+        </div>
+      
+  <h1 id="pkg-overview">manifest package</h1>
+
+    <p><code>import manifest "github.com/UlyssesZh/google-play/blog/2025-04/android-13"</code></p>
+    
+    
+  
+
+
+    <h2 id="pkg-index">Index <a href="#pkg-index" class="permalink">¶</a></h2>
+
+      <ul>
+        
+        
+        
+        
+          <li>
+            <a href="#Manifest">type Manifest</a>
+            
+          </li>
+        
+      </ul>
+    
+
+    
+
+    
+
+    
+
+    
+      <h2 id="Manifest" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/blog/2025-04/android-13/manifest.go#L5" rel="noopener nofollow" title="View Source">Manifest</a>
+
+        <a href="#Manifest" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/blog/2025-04/android-13/manifest.go#L5" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Manifest struct {
+	XMLName <a href="https://pkg.go.dev/encoding/xml">xml</a>.<a href="https://pkg.go.dev/encoding/xml#Name">Name</a> `xml:&#34;manifest&#34;`
+
+	Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+	Android <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;android,attr&#34;`
+
+	VersionCode <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;versionCode,attr&#34;`
+
+	VersionName <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;versionName,attr&#34;`
+
+	CompileSdkVersion <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;compileSdkVersion,attr&#34;`
+
+	CompileSdkVersionCodename <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;compileSdkVersionCodename,attr&#34;`
+
+	EmergencyInstaller <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;emergencyInstaller,attr&#34;`
+
+	Package <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;package,attr&#34;`
+
+	PlatformBuildVersionCode <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;platformBuildVersionCode,attr&#34;`
+
+	PlatformBuildVersionName <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;platformBuildVersionName,attr&#34;`
+
+	UsesSdk struct {
+		Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+		MinSdkVersion <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;minSdkVersion,attr&#34;`
+
+		TargetSdkVersion <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;targetSdkVersion,attr&#34;`
+	} `xml:&#34;uses-sdk&#34;`
+
+	UsesPermission []struct {
+		Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+		Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+		UsesPermissionFlags <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;usesPermissionFlags,attr&#34;`
+
+		Required <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;required,attr&#34;`
+
+		MaxSdkVersion <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;maxSdkVersion,attr&#34;`
+	}              `xml:&#34;uses-permission&#34;`
+
+	UsesPermissionSdk23 struct {
+		Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+		Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+		MaxSdkVersion <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;maxSdkVersion,attr&#34;`
+	} `xml:&#34;uses-permission-sdk-23&#34;`
+
+	UsesFeature []struct {
+		Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+		Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+		Required <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;required,attr&#34;`
+	}           `xml:&#34;uses-feature&#34;`
+
+	Permission []struct {
+		Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+		Label <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;label,attr&#34;`
+
+		Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+		ProtectionLevel <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;protectionLevel,attr&#34;`
+
+		Description <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;description,attr&#34;`
+	}          `xml:&#34;permission&#34;`
+
+	Queries struct {
+		Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+		Package struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+		} `xml:&#34;package&#34;`
+
+		Provider struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+			Authorities <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;authorities,attr&#34;`
+		} `xml:&#34;provider&#34;`
+
+		Intent []struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Action struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+			} `xml:&#34;action&#34;`
+
+			Category struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+			} `xml:&#34;category&#34;`
+
+			Data struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Scheme <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;scheme,attr&#34;`
+
+				Host <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;host,attr&#34;`
+			} `xml:&#34;data&#34;`
+		}      `xml:&#34;intent&#34;`
+	} `xml:&#34;queries&#34;`
+
+	Application struct {
+		Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+		Label <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;label,attr&#34;`
+
+		Icon <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;icon,attr&#34;`
+
+		Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+		BackupAgent <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;backupAgent,attr&#34;`
+
+		KillAfterRestore <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;killAfterRestore,attr&#34;`
+
+		RestoreNeedsApplication <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;restoreNeedsApplication,attr&#34;`
+
+		RestoreAnyVersion <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;restoreAnyVersion,attr&#34;`
+
+		HardwareAccelerated <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;hardwareAccelerated,attr&#34;`
+
+		SupportsRtl <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;supportsRtl,attr&#34;`
+
+		RequiredForAllUsers <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;requiredForAllUsers,attr&#34;`
+
+		RestrictedAccountType <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;restrictedAccountType,attr&#34;`
+
+		ExtractNativeLibs <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;extractNativeLibs,attr&#34;`
+
+		UsesCleartextTraffic <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;usesCleartextTraffic,attr&#34;`
+
+		RoundIcon <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;roundIcon,attr&#34;`
+
+		AppComponentFactory <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;appComponentFactory,attr&#34;`
+
+		RequestLegacyExternalStorage <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;requestLegacyExternalStorage,attr&#34;`
+
+		LocaleConfig <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;localeConfig,attr&#34;`
+
+		EnableOnBackInvokedCallback <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;enableOnBackInvokedCallback,attr&#34;`
+
+		Service []struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+			Enabled <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;enabled,attr&#34;`
+
+			Exported <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;exported,attr&#34;`
+
+			Process <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;process,attr&#34;`
+
+			Permission <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;permission,attr&#34;`
+
+			ForegroundServiceType <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;foregroundServiceType,attr&#34;`
+
+			VisibleToInstantApps <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;visibleToInstantApps,attr&#34;`
+
+			SingleUser <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;singleUser,attr&#34;`
+
+			IsolatedProcess <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;isolatedProcess,attr&#34;`
+
+			Description <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;description,attr&#34;`
+
+			DirectBootAware <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;directBootAware,attr&#34;`
+
+			IntentFilter []struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Priority <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;priority,attr&#34;`
+
+				Action []struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+				}      `xml:&#34;action&#34;`
+
+				Data struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Scheme <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;scheme,attr&#34;`
+
+					Host <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;host,attr&#34;`
+
+					PathPrefix <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;pathPrefix,attr&#34;`
+				} `xml:&#34;data&#34;`
+
+				Category struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+				} `xml:&#34;category&#34;`
+			}            `xml:&#34;intent-filter&#34;`
+
+			MetaData []struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+				Resource <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;resource,attr&#34;`
+
+				Value <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;value,attr&#34;`
+			}        `xml:&#34;meta-data&#34;`
+		}       `xml:&#34;service&#34;`
+
+		MetaData []struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+			Resource <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;resource,attr&#34;`
+
+			Value <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;value,attr&#34;`
+		}        `xml:&#34;meta-data&#34;`
+
+		Activity []struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Theme <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;theme,attr&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+			Exported <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;exported,attr&#34;`
+
+			TaskAffinity <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;taskAffinity,attr&#34;`
+
+			ConfigChanges <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;configChanges,attr&#34;`
+
+			ExcludeFromRecents <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;excludeFromRecents,attr&#34;`
+
+			LaunchMode <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;launchMode,attr&#34;`
+
+			ScreenOrientation <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;screenOrientation,attr&#34;`
+
+			NoHistory <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;noHistory,attr&#34;`
+
+			Enabled <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;enabled,attr&#34;`
+
+			Label <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;label,attr&#34;`
+
+			WindowSoftInputMode <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;windowSoftInputMode,attr&#34;`
+
+			Icon <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;icon,attr&#34;`
+
+			AllowTaskReparenting <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;allowTaskReparenting,attr&#34;`
+
+			Process <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;process,attr&#34;`
+
+			Permission <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;permission,attr&#34;`
+
+			VisibleToInstantApps <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;visibleToInstantApps,attr&#34;`
+
+			KnownActivityEmbeddingCerts <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;knownActivityEmbeddingCerts,attr&#34;`
+
+			StateNotNeeded <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;stateNotNeeded,attr&#34;`
+
+			IntentFilter []struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Priority <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;priority,attr&#34;`
+
+				AutoVerify <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;autoVerify,attr&#34;`
+
+				Action []struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+				}      `xml:&#34;action&#34;`
+
+				Category []struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+				}        `xml:&#34;category&#34;`
+
+				Data []struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					MimeType <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;mimeType,attr&#34;`
+
+					Scheme <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;scheme,attr&#34;`
+
+					Host <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;host,attr&#34;`
+
+					PathPrefix <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;pathPrefix,attr&#34;`
+
+					Path <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;path,attr&#34;`
+				}    `xml:&#34;data&#34;`
+			}            `xml:&#34;intent-filter&#34;`
+
+			MetaData []struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+				Resource <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;resource,attr&#34;`
+
+				Value <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;value,attr&#34;`
+			}        `xml:&#34;meta-data&#34;`
+		}        `xml:&#34;activity&#34;`
+
+		Provider []struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+			Enabled <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;enabled,attr&#34;`
+
+			Exported <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;exported,attr&#34;`
+
+			Process <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;process,attr&#34;`
+
+			Authorities <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;authorities,attr&#34;`
+
+			GrantUriPermissions <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;grantUriPermissions,attr&#34;`
+
+			VisibleToInstantApps <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;visibleToInstantApps,attr&#34;`
+
+			MetaData []struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+				Value <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;value,attr&#34;`
+
+				Resource <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;resource,attr&#34;`
+			}        `xml:&#34;meta-data&#34;`
+		}        `xml:&#34;provider&#34;`
+
+		Profileable struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Shell <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;shell,attr&#34;`
+		} `xml:&#34;profileable&#34;`
+
+		UsesLibrary []struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+			Required <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;required,attr&#34;`
+		}           `xml:&#34;uses-library&#34;`
+
+		Property []struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+			Value <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;value,attr&#34;`
+
+			Resource <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;resource,attr&#34;`
+		}        `xml:&#34;property&#34;`
+
+		Receiver []struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+			Permission <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;permission,attr&#34;`
+
+			Exported <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;exported,attr&#34;`
+
+			Enabled <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;enabled,attr&#34;`
+
+			Process <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;process,attr&#34;`
+
+			DirectBootAware <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;directBootAware,attr&#34;`
+
+			IntentFilter []struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Action []struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+				}      `xml:&#34;action&#34;`
+
+				Data struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Scheme <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;scheme,attr&#34;`
+
+					MimeType <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;mimeType,attr&#34;`
+				} `xml:&#34;data&#34;`
+
+				Category []struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+				}        `xml:&#34;category&#34;`
+			}            `xml:&#34;intent-filter&#34;`
+
+			MetaData struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+				Resource <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;resource,attr&#34;`
+			} `xml:&#34;meta-data&#34;`
+		}        `xml:&#34;receiver&#34;`
+
+		ActivityAlias []struct {
+			Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+			Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+			Enabled <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;enabled,attr&#34;`
+
+			Exported <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;exported,attr&#34;`
+
+			TargetActivity <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;targetActivity,attr&#34;`
+
+			Label <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;label,attr&#34;`
+
+			Icon <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;icon,attr&#34;`
+
+			RoundIcon <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;roundIcon,attr&#34;`
+
+			IntentFilter struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Category []struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+				}        `xml:&#34;category&#34;`
+
+				Action []struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+				}      `xml:&#34;action&#34;`
+
+				Data []struct {
+					Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+					Scheme <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;scheme,attr&#34;`
+
+					Host <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;host,attr&#34;`
+
+					Path <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;path,attr&#34;`
+				}    `xml:&#34;data&#34;`
+			} `xml:&#34;intent-filter&#34;`
+
+			MetaData []struct {
+				Text <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;,chardata&#34;`
+
+				Name <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;name,attr&#34;`
+
+				Value <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;value,attr&#34;`
+
+				Resource <a href="https://pkg.go.dev/builtin#string">string</a> `xml:&#34;resource,attr&#34;`
+			}        `xml:&#34;meta-data&#34;`
+		}             `xml:&#34;activity-alias&#34;`
+	} `xml:&#34;application&#34;`
+}</pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+    
+
+    
+
+    
+      <h2 id="pkg-files">
+        Source Files
+        <a href="#pkg-files" class="permalink">¶</a>
+      </h2>
+      <p><a href="https://github.com/UlyssesZh/google-play/blob/main/blog/2025-04/android-13/manifest.go" rel="noopener nofollow" title="View Source">manifest.go</a>
+</p>
+    
+  
+
+  
+
+  
+        <div class="module-nav footer">
+          <div>
+            <a href="/doc/google-play/">github.com/UlyssesZh/google-play</a>/<wbr /><span>blog/2025-04/android-13</span>
+          </div>
+          <code>main</code>
+        </div>
+        <footer>
+          <nav>
+            Generated with
+            <a href="https://code.pfad.fr/vanitydoc/">vanitydoc v0.21.1</a> &middot;
+            <a href="https://go.dev">Go Language</a>
+          </nav>
+        </footer>
+    </body>
+  </html>
