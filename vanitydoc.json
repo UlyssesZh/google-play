@@ -1,9 +1,10 @@
 {
    "html": {
-      "output": "docs"
+      "output": ".",
+      "stylesheet_links": ["/doc/google-play/vanitydoc.css"]
    },
    "modules": {
-      "google-play": {
+      "doc/google-play": {
          "archive_ref_prefix": "heads/",
          "ref": "main",
          "type": "github",
