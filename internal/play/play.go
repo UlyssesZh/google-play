@@ -1,7 +1,7 @@
 package main
 
 import (
-   "41.neocities.org/google/play"
+   "github.com/UlyssesZh/google-play/play"
    "41.neocities.org/x/progress"
    "flag"
    "fmt"

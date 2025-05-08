@@ -1,16 +1,20 @@
-.PHONY: build install tidy
+.PHONY: build install tidy tidy-build
 
 PREFIX ?= /usr/local
 
 tidy-build: tidy build
 
+tidy-doc: tidy doc
+
 tidy:
 	go mod tidy
 
 build:
-	go build -C play
 	go build -C internal/play -o $(shell pwd)/bin/play
 	go build -C internal/badging -o $(shell pwd)/bin/badging
+
+doc:
+	go tool vanitydoc vanitydoc.json
 
 install: build
 	mkdir -p $(PREFIX)/bin

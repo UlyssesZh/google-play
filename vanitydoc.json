@@ -1,0 +1,13 @@
+{
+   "html": {
+      "output": "docs"
+   },
+   "modules": {
+      "google-play": {
+         "archive_ref_prefix": "heads/",
+         "ref": "main",
+         "type": "github",
+         "url": "https://github.com/UlyssesZh/google-play"
+      }
+   }
+}
