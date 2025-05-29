@@ -1,14 +1,14 @@
 {
-   "html": {
-      "output": ".",
-      "stylesheet_links": ["/doc/google-play/vanitydoc.css"]
-   },
-   "modules": {
-      "doc/google-play": {
-         "archive_ref_prefix": "heads/",
-         "ref": "main",
-         "type": "github",
-         "url": "https://github.com/UlyssesZh/google-play"
-      }
-   }
+	"html": {
+		"output": ".",
+		"stylesheet_links": ["/doc/google-play/vanitydoc.css"]
+	},
+	"modules": {
+		"doc/google-play": {
+			"archive_ref_prefix": "heads/",
+			"ref": "main",
+			"type": "github",
+			"url": "https://github.com/UlyssesZh/google-play"
+		}
+	}
 }
