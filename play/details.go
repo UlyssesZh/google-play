@@ -43,6 +43,7 @@ func (d Details) String() string {
 	b = append(b, '\n')
 	b = fmt.Appendln(b, "details[13][1][82][1][1] =", d.field_13_1_82_1_1())
 	b = fmt.Appendln(b, "details[15][18] =", d.field_15_18())
+	b = fmt.Appendln(b, "details[13][1][15] =", d.field_13_1_15())
 	b = fmt.Appendln(
 		b, "downloads =", stringer.Cardinal(d.Downloads()),
 	)
@@ -190,6 +191,17 @@ func (d Details) field_13_1_82_1_1() string {
 						return string(data)
 					}
 				}
+			}
+		}
+	}
+	return ""
+}
+
+func (d Details) field_13_1_15() string {
+	for data := range d[0].Get(13) {
+		for data := range data.Get(1) {
+			for data := range data.GetBytes(15) {
+				return string(data)
 			}
 		}
 	}

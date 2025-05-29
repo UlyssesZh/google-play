@@ -85,6 +85,9 @@ func TestDetails(t *testing.T) {
 		if detail.field_15_18() == "" {
 			t.Fatal("field_15_18")
 		}
+		if detail.field_13_1_15() == "" {
+			t.Fatal("field_13_1_15")
+		}
 		if detail.size() == 0 {
 			t.Fatal("size")
 		}
