@@ -1,0 +1,1072 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="vcs" content="git"/>
+<meta name="vcs:default-branch" content="main"/>
+<meta name="vcs:clone" content="https://github.com/UlyssesZh/google-play.git"/>
+<meta name="vcs:clone" content="git@github.com:UlyssesZh/google-play.git"/>
+<meta name="forge:summary" content="https://github.com/UlyssesZh/google-play"/>
+<meta name="forge:dir" content="https://github.com/UlyssesZh/google-play/blob/{ref}/{path}"/>
+<meta name="forge:file" content="https://github.com/UlyssesZh/google-play/blob/{ref}/{path}"/>
+<meta name="forge:rawfile" content="https://github.com/UlyssesZh/google-play/raw/{ref}/{path}"/>
+<meta name="forge:line" content="https://github.com/UlyssesZh/google-play/blob/{ref}/{path}#L{line}"/>
+<meta name="go-import" content="github.com/UlyssesZh/google-play git https://github.com/UlyssesZh/google-play.git"/>
+<meta name="go-source" content="github.com/UlyssesZh/google-play https://github.com/UlyssesZh/google-play https://github.com/UlyssesZh/google-play/blob/{commit}/{file} https://github.com/UlyssesZh/google-play/blob/{commit}/{file}#L{line}"/>
+<link href="/doc/google-play/vanitydoc.css" rel="stylesheet">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+        <title>play package - github.com/UlyssesZh/google-play</title>
+    </head>
+    <body>
+        <div class="module-nav sticky-header">
+          <div>
+            <a href="/doc/google-play/">github.com/UlyssesZh/google-play</a>/<a href="#top" title="Back to top"
+              >play <span>↑</span></a
+            >
+          </div>
+          <nav><a
+                href="#pkg-index"
+                >Index</a
+              >
+            <span>|</span>&nbsp;<a
+                href="#pkg-files"
+                >Files</a
+              >
+            </nav>
+        </div>
+      
+  <h1 id="pkg-overview">play package</h1>
+
+    <p><code>import "github.com/UlyssesZh/google-play/play"</code></p>
+    
+    
+  
+
+
+    <h2 id="pkg-index">Index <a href="#pkg-index" class="permalink">¶</a></h2>
+
+      <ul>
+        
+          <li><a href="#pkg-constants">Constants</a></li>
+        
+        
+          <li><a href="#pkg-variables">Variables</a></li>
+        
+        
+        
+          <li>
+            <a href="#Apk">type Apk</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Apk.Field1"
+                      >func (a Apk) Field1() string</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Apk.Url"
+                      >func (a Apk) Url() string</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#App">type App</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#App.Apk"
+                      >func (a *App) Apk(value string) string</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#App.Obb"
+                      >func (a *App) Obb(value uint64) string</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#Auth">type Auth</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Auth.Acquire"
+                      >func (a Auth) Acquire(check Checkin, id string) error</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Auth.Auth"
+                      >func (a Auth) Auth() string</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Auth.Delivery"
+                      >func (a Auth) Delivery(
+	check Checkin, app1 *App, single bool,
+) (*Delivery, error)</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Auth.Details"
+                      >func (a Auth) Details(check Checkin, doc string, single bool) (*Details, error)</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#Byte">type Byte</a>
+            
+              <ul>
+                
+                  <li><a href="#NewToken">func NewToken(oauth_token string) (Byte[Token], error)</a></li>
+                
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#Checkin">type Checkin</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Checkin.Unmarshal"
+                      >func (c *Checkin) Unmarshal(data Byte[Checkin]) error</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#Delivery">type Delivery</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Delivery.Apk"
+                      >func (d Delivery) Apk() iter.Seq[Apk]</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Delivery.Obb"
+                      >func (d Delivery) Obb() iter.Seq[Obb]</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Delivery.Url"
+                      >func (d Delivery) Url() string</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#Details">type Details</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Details.Downloads"
+                      >func (d Details) Downloads() uint64</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Details.Name"
+                      >func (d Details) Name() string</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Details.String"
+                      >func (d Details) String() string</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#Device">type Device</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Device.Checkin"
+                      >func (d *Device) Checkin() (Byte[Checkin], error)</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Device.Sync"
+                      >func (d *Device) Sync(check Checkin) error</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#Obb">type Obb</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Obb.Field1"
+                      >func (o Obb) Field1() uint64</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Obb.Url"
+                      >func (o Obb) Url() string</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#Token">type Token</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Token.Auth"
+                      >func (t Token) Auth() (*Auth, error)</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Token.Token"
+                      >func (t Token) Token() string</a
+                    >
+                  </li>
+                
+                  <li>
+                    <a href="#Token.Unmarshal"
+                      >func (t *Token) Unmarshal(data Byte[Token]) error</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#Values">type Values</a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Values.Set"
+                      >func (v Values) Set(data string) error</a
+                    >
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    
+
+    
+      <h2 id="pkg-constants">
+        Constants <a href="#pkg-constants" class="permalink">¶</a>
+      </h2>
+      
+        <div data-kind="constant" class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L23" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>const <span id="Leanback">Leanback</span> = &#34;android.software.leanback&#34;
+</pre>
+        </div>
+        <p>com.roku.web.trc
+
+      
+    
+
+    
+      <h2 id="pkg-variables">
+        Variables <a href="#pkg-variables" class="permalink">¶</a>
+      </h2>
+      
+        <div data-kind="variable" class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L79" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>var <span id="Abis">Abis</span> = []<a href="https://pkg.go.dev/builtin#string">string</a>{
+	&#34;x86&#34;,
+	&#34;x86_64&#34;,
+
+	&#34;armeabi-v7a&#34;,
+
+	&#34;arm64-v8a&#34;,
+}
+</pre>
+        </div>
+        <p>developer.android.com/ndk/guides/abis
+
+      
+        <div data-kind="variable" class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L137" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>var <span id="DefaultDevice">DefaultDevice</span> = <a href="#Device">Device</a>{
+	Feature:	[]<a href="https://pkg.go.dev/builtin#string">string</a>{
+		&#34;android.hardware.location.gps&#34;,
+
+		&#34;android.software.midi&#34;,
+
+		&#34;android.hardware.camera.front&#34;,
+
+		&#34;android.hardware.camera.flash&#34;,
+
+		&#34;android.hardware.microphone&#34;,
+
+		&#34;android.software.device_admin&#34;,
+
+		&#34;android.hardware.touchscreen&#34;,
+
+		&#34;android.hardware.wifi&#34;,
+
+		&#34;android.hardware.sensor.accelerometer&#34;,
+
+		&#34;nrdp.modelgroup&#34;,
+
+		&#34;android.hardware.camera&#34;,
+
+		&#34;android.hardware.location&#34;,
+
+		&#34;android.hardware.screen.portrait&#34;,
+
+		&#34;android.hardware.screen.landscape&#34;,
+
+		&#34;android.hardware.location.network&#34;,
+
+		&#34;android.hardware.nfc&#34;,
+
+		&#34;android.hardware.bluetooth&#34;,
+
+		&#34;android.hardware.bluetooth_le&#34;,
+
+		&#34;android.hardware.camera.autofocus&#34;,
+
+		&#34;android.hardware.usb.host&#34;,
+
+		&#34;android.hardware.sensor.compass&#34;,
+
+		&#34;android.hardware.telephony&#34;,
+	},
+	Library:	[]<a href="https://pkg.go.dev/builtin#string">string</a>{
+		&#34;org.apache.http.legacy&#34;,
+
+		&#34;android.test.runner&#34;,
+	},
+	Texture:	[]<a href="https://pkg.go.dev/builtin#string">string</a>{
+		&#34;GL_OES_compressed_ETC1_RGB8_texture&#34;,
+
+		&#34;GL_KHR_texture_compression_astc_ldr&#34;,
+	},
+}
+</pre>
+        </div>
+        
+      
+    
+
+    
+
+    
+      <h2 id="Apk" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L15" rel="noopener nofollow" title="View Source">Apk</a>
+
+        <a href="#Apk" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L15" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Apk [1]<a href="https://pkg.go.dev/41.neocities.org/protobuf">protobuf</a>.<a href="https://pkg.go.dev/41.neocities.org/protobuf#Message">Message</a></pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+        <h3 id="Apk.Field1" data-kind="method">
+          func (Apk)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L93" rel="noopener nofollow" title="View Source">Field1</a>
+
+          <a href="#Apk.Field1" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L93" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (a <a href="#Apk">Apk</a>) Field1() <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Apk.Url" data-kind="method">
+          func (Apk)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L100" rel="noopener nofollow" title="View Source">Url</a>
+
+          <a href="#Apk.Url" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L100" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (a <a href="#Apk">Apk</a>) Url() <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+    
+      <h2 id="App" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L125" rel="noopener nofollow" title="View Source">App</a>
+
+        <a href="#App" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L125" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type App struct {
+	Id      <a href="https://pkg.go.dev/builtin#string">string</a>
+	Version <a href="https://pkg.go.dev/builtin#uint64">uint64</a>
+}</pre>
+      </div>
+      <p>play.google.com/store/apps/details?id=com.google.android.apps.youtube.unplugged
+
+      
+      
+      
+  
+
+      
+      
+        <h3 id="App.Apk" data-kind="method">
+          func (*App)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L112" rel="noopener nofollow" title="View Source">Apk</a>
+
+          <a href="#App.Apk" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L112" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (a *<a href="#App">App</a>) Apk(value <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="App.Obb" data-kind="method">
+          func (*App)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L64" rel="noopener nofollow" title="View Source">Obb</a>
+
+          <a href="#App.Obb" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L64" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (a *<a href="#App">App</a>) Obb(value <a href="https://pkg.go.dev/builtin#uint64">uint64</a>) <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+    
+      <h2 id="Auth" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L56" rel="noopener nofollow" title="View Source">Auth</a>
+
+        <a href="#Auth" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L56" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Auth [1]<a href="#Values">Values</a></pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+        <h3 id="Auth.Acquire" data-kind="method">
+          func (Auth)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/acquire.go#L12" rel="noopener nofollow" title="View Source">Acquire</a>
+
+          <a href="#Auth.Acquire" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/acquire.go#L12" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (a <a href="#Auth">Auth</a>) Acquire(check <a href="#Checkin">Checkin</a>, id <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="https://pkg.go.dev/builtin#error">error</a></pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Auth.Auth" data-kind="method">
+          func (Auth)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L62" rel="noopener nofollow" title="View Source">Auth</a>
+
+          <a href="#Auth.Auth" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L62" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (a <a href="#Auth">Auth</a>) Auth() <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Auth.Delivery" data-kind="method">
+          func (Auth)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L19" rel="noopener nofollow" title="View Source">Delivery</a>
+
+          <a href="#Auth.Delivery" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L19" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (a <a href="#Auth">Auth</a>) Delivery(
+	check <a href="#Checkin">Checkin</a>, app1 *<a href="#App">App</a>, single <a href="https://pkg.go.dev/builtin#bool">bool</a>,
+) (*<a href="#Delivery">Delivery</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Auth.Details" data-kind="method">
+          func (Auth)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L57" rel="noopener nofollow" title="View Source">Details</a>
+
+          <a href="#Auth.Details" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L57" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (a <a href="#Auth">Auth</a>) Details(check <a href="#Checkin">Checkin</a>, doc <a href="https://pkg.go.dev/builtin#string">string</a>, single <a href="https://pkg.go.dev/builtin#bool">bool</a>) (*<a href="#Details">Details</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</pre>
+        </div>
+        
+        
+  
+
+      
+    
+      <h2 id="Byte" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L11" rel="noopener nofollow" title="View Source">Byte</a>
+
+        <a href="#Byte" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L11" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Byte[T <a href="https://pkg.go.dev/builtin#any">any</a>] []<a href="https://pkg.go.dev/builtin#byte">byte</a></pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+        <h3 id="NewToken" data-kind="function">
+          func
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L13" rel="noopener nofollow" title="View Source">NewToken</a>
+
+          <a href="#NewToken" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L13" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func NewToken(oauth_token <a href="https://pkg.go.dev/builtin#string">string</a>) (<a href="#Byte">Byte</a>[<a href="#Token">Token</a>], <a href="https://pkg.go.dev/builtin#error">error</a>)</pre>
+        </div>
+        
+        
+  
+
+      
+      
+    
+      <h2 id="Checkin" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/checkin.go#L11" rel="noopener nofollow" title="View Source">Checkin</a>
+
+        <a href="#Checkin" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/checkin.go#L11" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Checkin [1]<a href="https://pkg.go.dev/41.neocities.org/protobuf">protobuf</a>.<a href="https://pkg.go.dev/41.neocities.org/protobuf#Message">Message</a></pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+        <h3 id="Checkin.Unmarshal" data-kind="method">
+          func (*Checkin)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/checkin.go#L13" rel="noopener nofollow" title="View Source">Unmarshal</a>
+
+          <a href="#Checkin.Unmarshal" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/checkin.go#L13" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (c *<a href="#Checkin">Checkin</a>) Unmarshal(data <a href="#Byte">Byte</a>[<a href="#Checkin">Checkin</a>]) <a href="https://pkg.go.dev/builtin#error">error</a></pre>
+        </div>
+        
+        
+  
+
+      
+    
+      <h2 id="Delivery" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L13" rel="noopener nofollow" title="View Source">Delivery</a>
+
+        <a href="#Delivery" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L13" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Delivery [1]<a href="https://pkg.go.dev/41.neocities.org/protobuf">protobuf</a>.<a href="https://pkg.go.dev/41.neocities.org/protobuf#Message">Message</a></pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+        <h3 id="Delivery.Apk" data-kind="method">
+          func (Delivery)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L83" rel="noopener nofollow" title="View Source">Apk</a>
+
+          <a href="#Delivery.Apk" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L83" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (d <a href="#Delivery">Delivery</a>) Apk() <a href="https://pkg.go.dev/iter">iter</a>.<a href="https://pkg.go.dev/iter#Seq">Seq</a>[<a href="#Apk">Apk</a>]</pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Delivery.Obb" data-kind="method">
+          func (Delivery)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L73" rel="noopener nofollow" title="View Source">Obb</a>
+
+          <a href="#Delivery.Obb" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L73" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (d <a href="#Delivery">Delivery</a>) Obb() <a href="https://pkg.go.dev/iter">iter</a>.<a href="https://pkg.go.dev/iter#Seq">Seq</a>[<a href="#Obb">Obb</a>]</pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Delivery.Url" data-kind="method">
+          func (Delivery)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L66" rel="noopener nofollow" title="View Source">Url</a>
+
+          <a href="#Delivery.Url" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L66" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (d <a href="#Delivery">Delivery</a>) Url() <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+    
+      <h2 id="Details" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L93" rel="noopener nofollow" title="View Source">Details</a>
+
+        <a href="#Details" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L93" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Details [1]<a href="https://pkg.go.dev/41.neocities.org/protobuf">protobuf</a>.<a href="https://pkg.go.dev/41.neocities.org/protobuf#Message">Message</a></pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+        <h3 id="Details.Downloads" data-kind="method">
+          func (Details)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L130" rel="noopener nofollow" title="View Source">Downloads</a>
+
+          <a href="#Details.Downloads" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L130" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (d <a href="#Details">Details</a>) Downloads() <a href="https://pkg.go.dev/builtin#uint64">uint64</a></pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Details.Name" data-kind="method">
+          func (Details)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L95" rel="noopener nofollow" title="View Source">Name</a>
+
+          <a href="#Details.Name" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L95" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (d <a href="#Details">Details</a>) Name() <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Details.String" data-kind="method">
+          func (Details)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L30" rel="noopener nofollow" title="View Source">String</a>
+
+          <a href="#Details.String" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go#L30" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (d <a href="#Details">Details</a>) String() <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+    
+      <h2 id="Device" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L130" rel="noopener nofollow" title="View Source">Device</a>
+
+        <a href="#Device" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go#L130" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Device struct {
+	Abi     <a href="https://pkg.go.dev/builtin#string">string</a>
+	Feature []<a href="https://pkg.go.dev/builtin#string">string</a>
+	Library []<a href="https://pkg.go.dev/builtin#string">string</a>
+	Texture []<a href="https://pkg.go.dev/builtin#string">string</a>
+}</pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+        <h3 id="Device.Checkin" data-kind="method">
+          func (*Device)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/checkin.go#L17" rel="noopener nofollow" title="View Source">Checkin</a>
+
+          <a href="#Device.Checkin" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/checkin.go#L17" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (d *<a href="#Device">Device</a>) Checkin() (<a href="#Byte">Byte</a>[<a href="#Checkin">Checkin</a>], <a href="https://pkg.go.dev/builtin#error">error</a>)</pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Device.Sync" data-kind="method">
+          func (*Device)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/sync.go#L11" rel="noopener nofollow" title="View Source">Sync</a>
+
+          <a href="#Device.Sync" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/sync.go#L11" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (d *<a href="#Device">Device</a>) Sync(check <a href="#Checkin">Checkin</a>) <a href="https://pkg.go.dev/builtin#error">error</a></pre>
+        </div>
+        
+        
+  
+
+      
+    
+      <h2 id="Obb" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L17" rel="noopener nofollow" title="View Source">Obb</a>
+
+        <a href="#Obb" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L17" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Obb [1]<a href="https://pkg.go.dev/41.neocities.org/protobuf">protobuf</a>.<a href="https://pkg.go.dev/41.neocities.org/protobuf#Message">Message</a></pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+        <h3 id="Obb.Field1" data-kind="method">
+          func (Obb)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L107" rel="noopener nofollow" title="View Source">Field1</a>
+
+          <a href="#Obb.Field1" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L107" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (o <a href="#Obb">Obb</a>) Field1() <a href="https://pkg.go.dev/builtin#uint64">uint64</a></pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Obb.Url" data-kind="method">
+          func (Obb)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L114" rel="noopener nofollow" title="View Source">Url</a>
+
+          <a href="#Obb.Url" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go#L114" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (o <a href="#Obb">Obb</a>) Url() <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+    
+      <h2 id="Token" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L39" rel="noopener nofollow" title="View Source">Token</a>
+
+        <a href="#Token" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L39" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Token [1]<a href="#Values">Values</a></pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+        <h3 id="Token.Auth" data-kind="method">
+          func (Token)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L66" rel="noopener nofollow" title="View Source">Auth</a>
+
+          <a href="#Token.Auth" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L66" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (t <a href="#Token">Token</a>) Auth() (*<a href="#Auth">Auth</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Token.Token" data-kind="method">
+          func (Token)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L58" rel="noopener nofollow" title="View Source">Token</a>
+
+          <a href="#Token.Token" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L58" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (t <a href="#Token">Token</a>) Token() <a href="https://pkg.go.dev/builtin#string">string</a></pre>
+        </div>
+        
+        
+  
+
+      
+        <h3 id="Token.Unmarshal" data-kind="method">
+          func (*Token)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L33" rel="noopener nofollow" title="View Source">Unmarshal</a>
+
+          <a href="#Token.Unmarshal" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L33" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (t *<a href="#Token">Token</a>) Unmarshal(data <a href="#Byte">Byte</a>[<a href="#Token">Token</a>]) <a href="https://pkg.go.dev/builtin#error">error</a></pre>
+        </div>
+        
+        
+  
+
+      
+    
+      <h2 id="Values" data-kind="type">
+        type
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L43" rel="noopener nofollow" title="View Source">Values</a>
+
+        <a href="#Values" class="permalink">¶</a>
+      </h2>
+      <div class="corner-forge-link">
+        <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L43" rel="noopener nofollow" title="View Source">❖</a>
+
+        <pre>type Values map[<a href="https://pkg.go.dev/builtin#string">string</a>]<a href="https://pkg.go.dev/builtin#string">string</a></pre>
+      </div>
+      
+      
+      
+      
+  
+
+      
+      
+        <h3 id="Values.Set" data-kind="method">
+          func (Values)
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L45" rel="noopener nofollow" title="View Source">Set</a>
+
+          <a href="#Values.Set" class="permalink">¶</a>
+        </h3>
+        <div class="corner-forge-link">
+          <a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go#L45" rel="noopener nofollow" title="View Source">❖</a>
+
+          <pre>func (v <a href="#Values">Values</a>) Set(data <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="https://pkg.go.dev/builtin#error">error</a></pre>
+        </div>
+        
+        
+  
+
+      
+    
+
+    
+
+    
+      <h2 id="pkg-files">
+        Source Files
+        <a href="#pkg-files" class="permalink">¶</a>
+      </h2>
+      <p><a href="https://github.com/UlyssesZh/google-play/blob/main/play/acquire.go" rel="noopener nofollow" title="View Source">acquire.go</a>
+<a href="https://github.com/UlyssesZh/google-play/blob/main/play/auth.go" rel="noopener nofollow" title="View Source">auth.go</a>
+<a href="https://github.com/UlyssesZh/google-play/blob/main/play/checkin.go" rel="noopener nofollow" title="View Source">checkin.go</a>
+<a href="https://github.com/UlyssesZh/google-play/blob/main/play/delivery.go" rel="noopener nofollow" title="View Source">delivery.go</a>
+<a href="https://github.com/UlyssesZh/google-play/blob/main/play/details.go" rel="noopener nofollow" title="View Source">details.go</a>
+<a href="https://github.com/UlyssesZh/google-play/blob/main/play/play.go" rel="noopener nofollow" title="View Source">play.go</a>
+<a href="https://github.com/UlyssesZh/google-play/blob/main/play/sync.go" rel="noopener nofollow" title="View Source">sync.go</a>
+</p>
+    
+  
+
+  
+
+  
+        <div class="module-nav footer">
+          <div>
+            <a href="/doc/google-play/">github.com/UlyssesZh/google-play</a>/<wbr /><span>play</span>
+          </div>
+          <code>main</code>
+        </div>
+        <footer>
+          <nav>
+            Generated with
+            <a href="https://code.pfad.fr/vanitydoc/">vanitydoc v0.21.1</a> &middot;
+            <a href="https://go.dev">Go Language</a>
+          </nav>
+        </footer>
+    </body>
+  </html>

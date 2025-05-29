@@ -1,0 +1,242 @@
+/*
+SPDX-FileCopyrightText: 2024 Krish Gupta
+SPDX-License-Identifier: MIT
+https://github.com/xkrishguptaa/reseter.css
+*/
+*,::after,::before{box-sizing:inherit;padding:0;margin:0}:where(:root){line-height:1.15;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif}:where(main){display:block}:where(h1){font-size:2em;margin:.67em 0}:where(p + p){margin-top:1rem}:where(a){background-color:transparent}:where(abbr[title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}:where(code,kbd,samp,pre){font-family:monospace,monospace;font-size:1em}:where(sub,sup){font-size:75%;line-height:0;position:relative;vertical-align:baseline}:where(sub){bottom:-.25em}:where(sup){top:-.5em}:where(button,input,optgroup,select,textarea){line-height:inherit;border:1px solid currentColor}:where(button){overflow:visible;text-transform:none}:where(button,[type=button],[type=reset],[type=submit]){-webkit-appearance:button;padding:1px 6px}:where(input){overflow:visible}:where(input,textarea){padding:1px}:where(fieldset){border:1px solid currentColor;margin:0 2px}:where(legend){color:inherit;display:table;max-width:100%;white-space:normal}:where(progress){display:inline-block;vertical-align:baseline}:where(select){text-transform:none}:where(textarea){overflow:auto;vertical-align:top}:where([type=search]){-webkit-appearance:textfield;outline-offset:-2px}:where([type=color]){background:inherit}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}::-webkit-input-placeholder{color:inherit;opacity:.5}::-webkit-file-upload-button,::-webkit-search-decoration{-webkit-appearance:button;font:inherit}::-moz-focus-inner{border:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}:where(hr){box-sizing:content-box;height:0;color:inherit;overflow:visible}:where(dl,ol,ul){margin:1em 0}:where(ol ol,ol ul,ol dl,ul ol,ul ul,ul dl,dl ol,dl ul,dl dl){margin:0}:where(b,strong){font-weight:bolder}:where(audio,video){display:inline-block}:where(audio):not([controls]){display:none;height:0}:where(img){border:0}:where(svg):not(:root){overflow:hidden}:where(table){text-indent:0;border-color:inherit}:where(details){display:block}:where(dialog){background-color:inherit;border:solid;color:inherit;display:block;height:fit-content;left:0;margin:auto;padding:1em;position:absolute;right:0;width:fit-content}:where(dialog):not([open]){display:none}:where(summary){display:list-item}:where(canvas){display:inline-block}:where(template){display:none}:where([hidden]){display:none}
+/*
+SPDX-FileCopyrightText: 2024 Olivier Charvin <git@olivier.pfad.fr>
+SPDX-FileCopyrightText: 2020 Simple.css (Kev Quirk)
+
+SPDX-License-Identifier: MIT
+*/
+:root {
+  --text: #000;
+  --accent: rgb(0, 125, 156);
+  --code: #000;
+  --border: #c6c8ca;
+  --comment: #3a6e11;
+
+  --html-bg: rgb(255, 255, 255);
+  --sticky-bg: rgba(255, 255, 255, 0.7);
+  --accent-bg: #f5f7ff;
+  --target-bg: #fef9c3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --text: rgb(220, 220, 220);
+    --accent: rgb(80, 183, 224);
+    --code: #fff;
+    --border: #6e7072;
+    --comment: #5fda64;
+
+    --html-bg: rgb(32, 34, 36);
+    --accent-bg: #2b2b2b;
+    --sticky-bg: rgba(32, 34, 36, 0.7);
+    --target-bg: #493d1e;
+  }
+}
+html {
+  background-color: var(--html-bg);
+  scroll-padding-top: 3.5rem;
+  scroll-behavior: smooth;
+  color: var(--text);
+  overflow-wrap: break-word;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  font: 100%/1.5rem ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+body {
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 0 1.5rem;
+}
+p,
+details,
+ul {
+  margin: 0.75rem 0;
+}
+a {
+  text-decoration: none;
+  color: var(--accent);
+}
+a:hover {
+  text-decoration: underline;
+}
+:target {
+  background-color: var(--target-bg);
+}
+:target:not(summary) {
+  box-shadow: 0 0 0 0.5rem var(--target-bg);
+  border-radius: 0.1rem;
+}
+
+/* code blocks */
+pre {
+  background-color: var(--accent-bg);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+  tab-size: 4;
+  overflow: auto;
+}
+pre span {
+  color: var(--code);
+}
+
+pre .comment {
+  color: var(--comment);
+}
+code ~ pre {
+  margin-top: 0;
+}
+
+/* examples */
+summary {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+details > p {
+  padding: 0 0.75rem;
+}
+summary:not(:hover) .permalink {
+  opacity: 0.01; /* trick to prevent having to double-tap on iOS*/
+}
+details {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+details[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* headers */
+h1,
+h2,
+h3 {
+  margin: 1rem 0 0.5rem;
+  line-height: 1.1;
+}
+h2:not(:hover) .permalink,
+h3:not(:hover) .permalink {
+  visibility: hidden;
+}
+h2 + ul,
+h2 + p,
+h3 + p {
+  margin-top: 0.5rem;
+}
+
+/* lists */
+ul,
+ol {
+  padding-left: 2rem;
+}
+li > ul {
+  margin: 0.25rem 0;
+  margin-left: -1rem;
+}
+
+/* footer */
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 0 1rem;
+  font-size: 0.8rem;
+  margin-top: 4rem;
+}
+footer a {
+  display: inline-block;
+}
+
+/* tables (sub-packages)*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  text-align: start;
+}
+th,
+td {
+  padding: 0.5rem;
+}
+td {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+tbody tr:nth-child(2n + 1) {
+  background-color: var(--accent-bg);
+}
+
+/* top nav */
+.module-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+.module-nav > code,
+.module-nav > nav {
+  text-align: right;
+  flex-grow: 1;
+}
+.module-nav.footer {
+  margin-top: 4rem;
+  word-break: break-word;
+}
+.module-nav.footer + footer {
+  margin-top: 0;
+}
+.module-nav a[href="#top"]:not(:hover) {
+  color: var(--text);
+}
+.module-nav a[href="#top"]:not(:hover) span {
+  opacity: 0;
+}
+
+.corner-forge-link {
+  position: relative;
+}
+.corner-forge-link:not(:hover) > a {
+  visibility: hidden;
+}
+.corner-forge-link > a {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--border);
+  z-index: 42;
+  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
+  background-color: var(--sticky-bg);
+  margin: auto -1.5rem;
+  padding: 0 1.5rem 0.25rem;
+}
+.sticky-header > div,
+.sticky-header > nav {
+  white-space: nowrap;
+  overflow-y: auto;
+}
+
+abbr.hover-debug:hover:not(:has(*:hover)) {
+  background-color: var(--target-bg);
+}
+
